@@ -33,5 +33,15 @@ namespace FEB27
                 ShippingDate = DateTime.Today.AddDays(1);
         }
     }
-}
+
+    public class ShippingCalculator
+    {
+        public float CalculateShipping(Order order)
+        {
+
+            if (order.TotalPrice < 30f) return order.TotalPrice * 0.1f;
+            return 0;
+        }
+    }
+
 }
